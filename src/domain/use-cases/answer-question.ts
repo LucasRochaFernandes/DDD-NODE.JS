@@ -15,7 +15,7 @@ export class AnswerQuestionUseCase {
     questionId,
     content,
   }: AnswerQuestionUseCaseRequest): AnswerQuestionUseCaseResponse {
-    const answer = new Answer(content)
+    const answer = new Answer({ content, authorId: instructorId, questionId })
     return { answer }
   }
 }
